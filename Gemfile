@@ -14,6 +14,7 @@ gem 'plek', '~> 1.11.0'
 gem 'airbrake', '~> 4.3.1'
 
 gem 'valid_email', '~> 0.0.11'
+gem 'pry-byebug'
 
 gem 'statsd-ruby', '~> 1.2.1', require: 'statsd'
 gem 'logstasher', '0.6.2'

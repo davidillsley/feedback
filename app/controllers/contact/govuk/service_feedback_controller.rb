@@ -1,3 +1,4 @@
+require 'gds_api/base'
 class Contact::Govuk::ServiceFeedbackController < ContactController
   private
   def ticket_class
@@ -17,6 +18,7 @@ class Contact::Govuk::ServiceFeedbackController < ContactController
     # because the actual form lives in the "frontend" app,
     # it's not straightforward to re-render the form with
     # the user's original input
+    GdsApi::Base.logger = Logger.new("./log/no_ratings_log.txt")
     confirm_submission
   end
 end
