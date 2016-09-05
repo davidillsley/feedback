@@ -43,6 +43,17 @@ describe "Page improvements" do
     end
   end
 
+  it "returns an error if the required attributes aren't supplied" do
+    stub_any_support_api_call
+
+    post "/contact/govuk/page_improvements",
+      {}.to_json,
+      common_headers
+
+    assert_response :error
+      expect(response_hash).to include('status' => 'error')
+  end
+
   def response_hash
     JSON.parse(response.body)
   end
