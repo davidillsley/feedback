@@ -4,7 +4,6 @@ class ContactController < ApplicationController
   include Slimmer::Headers
 
   before_filter :set_cache_control, only: [:new, :index]
-  before_filter :setup_slimmer_artefact, only: :new
 
   def index
     @popular_links = CONTACT_LINKS.popular
@@ -83,9 +82,9 @@ private
     expires_in 10.minutes, public: true unless Rails.env.development?
   end
 
-  def setup_slimmer_artefact
-    set_slimmer_dummy_artefact(section_name: "Contact", section_link: "/contact")
-  end
+  # def setup_slimmer_artefact
+  #   set_slimmer_dummy_artefact(section_name: "Contact", section_link: "/contact")
+  # end
 
   def technical_attributes
     { user_agent: request.user_agent }
