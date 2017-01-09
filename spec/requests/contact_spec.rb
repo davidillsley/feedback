@@ -60,7 +60,7 @@ RSpec.describe "Contact", type: :request do
     fill_in "val", with: "test val"
     click_on "Send message"
 
-    no_web_calls_should_have_been_made
+    no_post_request_should_have_been_made(path: '/contact/govuk')
 
     expect(page.status_code).to eq(400)
   end
@@ -120,7 +120,7 @@ RSpec.describe "Contact", type: :request do
     expect(find_field('Your name').value).to eq 'test name'
     expect(find_field('Your email address').value).to eq 'a@a.com'
 
-    no_web_calls_should_have_been_made
+    no_post_request_should_have_been_made(path: '/contact/govuk')
   end
 
   it "should not let the user submit a request with email without name" do
@@ -136,7 +136,7 @@ RSpec.describe "Contact", type: :request do
     expect(find_field('Your email address').value).to eq 'a@a.com'
     expect(find_field('textdetails').value).to eq 'test text details'
 
-    no_web_calls_should_have_been_made
+    no_post_request_should_have_been_made(path: '/contact/govuk')
   end
 
   it "should not let the user submit a request with name without email" do
@@ -152,7 +152,7 @@ RSpec.describe "Contact", type: :request do
     expect(find_field('Your name').value).to eq 'test name'
     expect(find_field('textdetails').value).to eq 'test text details'
 
-    no_web_calls_should_have_been_made
+    no_post_request_should_have_been_made(path: '/contact/govuk')
   end
 
   it "should let the user submit a request with a link" do

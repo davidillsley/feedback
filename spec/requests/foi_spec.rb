@@ -84,6 +84,6 @@ RSpec.describe "FOI", type: :request do
     expect(find_field('Your email address').value).to eq 'a@a.com'
     expect(find_field('Confirm your email address').value).to eq 'a@a.com'
 
-    no_web_calls_should_have_been_made
+    no_post_request_should_have_been_made(path: "/contact/foi")
   end
 end
