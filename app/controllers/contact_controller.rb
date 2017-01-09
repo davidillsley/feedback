@@ -8,9 +8,12 @@ class ContactController < ApplicationController
   def index
     @popular_links = CONTACT_LINKS.popular
     @long_tail_links = CONTACT_LINKS.long_tail
+    @breadcrumbs = [breadcrumbs.first]
   end
 
   def new
+    @breadcrumbs = breadcrumbs
+
     respond_to do |format|
       format.html do
         render :new

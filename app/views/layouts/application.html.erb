@@ -12,6 +12,10 @@
     <div id="wrapper">
       <main id="content" role="main" class="group category-page">
         <header class="page-header group">
+          <div class="govuk-breadcrumbs">
+            <%= render partial: 'govuk_component/breadcrumbs', locals: { breadcrumbs: @breadcrumbs } %>
+          </div>
+
           <div class="full-width">
             <h1><%= yield :title %></h1>
           </div>

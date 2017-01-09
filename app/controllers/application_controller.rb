@@ -7,9 +7,22 @@ class ApplicationController < ActionController::Base
 
   include Slimmer::GovukComponents
   include Slimmer::Template
-  slimmer_template 'wrapper'
+  slimmer_template 'core_layout'
 
 protected
+
+  def breadcrumbs
+    [
+      {
+        title: "Home",
+        url: '/'
+      },
+      {
+        title: 'Contact',
+        url: '/contact'
+      }
+    ]
+  end
 
   def robot_script_submission_detected
     headers[Slimmer::Headers::SKIP_HEADER] = "1"
