@@ -21,7 +21,7 @@ gem 'rack_strip_client_ip', '0.0.1'
 gem 'invalid_utf8_rejector'
 
 gem 'uglifier', '~> 2.7.2'
-gem 'govuk_frontend_toolkit', '1.6.0'
+gem 'govuk_frontend_toolkit', '5.0.2'
 gem 'sass', '~> 3.4.18'
 gem 'sass-rails', '~> 5.0.4'
 
