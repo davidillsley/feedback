@@ -82,10 +82,6 @@ private
     expires_in 10.minutes, public: true unless Rails.env.development?
   end
 
-  # def setup_slimmer_artefact
-  #   set_slimmer_dummy_artefact(section_name: "Contact", section_link: "/contact")
-  # end
-
   def technical_attributes
     { user_agent: request.user_agent }
   end

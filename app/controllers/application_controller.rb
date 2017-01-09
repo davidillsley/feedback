@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   rescue_from SpamError, with: :robot_script_submission_detected
   rescue_from GdsApi::BaseError, with: :unable_to_create_ticket_error
 
+  include Slimmer::GovukComponents
   include Slimmer::Template
   slimmer_template 'wrapper'
 
