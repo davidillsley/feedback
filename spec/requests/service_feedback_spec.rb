@@ -1,10 +1,14 @@
 require 'rails_helper'
-require 'gds_api/test_helpers/support'
 require 'gds_api/test_helpers/support_api'
+require 'slimmer/test_helpers/govuk_components'
 
 RSpec.describe "Service feedback submission", type: :request do
-  include GdsApi::TestHelpers::Support
   include GdsApi::TestHelpers::SupportApi
+  include Slimmer::TestHelpers::GovukComponents
+
+  before do
+    stub_shared_component_locales
+  end
 
   it "should pass the feedback through the support-api" do
     stub_post = stub_support_api_service_feedback_creation(
