@@ -223,7 +223,7 @@ RSpec.describe "Contact", type: :request do
 
   it "should prefill the specific page field with the page before /contact", js: true do
     visit "/contact/foi"
-    click_on "Contact"
+    click_on "Submit your Freedom of Information request"
 
     contact_referrer = page.driver.cookies['govuk_contact_referrer'].value
     expect(contact_referrer).to match(/\/contact\/foi$/)
