@@ -25,6 +25,8 @@ class ContactController < ApplicationController
   end
 
   def create
+    Rails.logger.info "request remote ip of contact request: #{request.remote_ip}"
+
     data = contact_params.merge(technical_attributes)
     ticket = ticket_class.new data
 
